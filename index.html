@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrapowercaps - Garantia Exclusiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #d62828;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 14px;
+            background-color: #25D366;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: #d62828;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🟢 Quase lá! Falta pouco para garantir seu tratamento natural...</h1>
+        <p>Preencha os dados abaixo para finalizar sua reserva e receber a condição especial:</p>
+        
+        <div class="timer" id="countdown">
+            Oferta expira em: 10:00
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('Cadastro confirmado! Em breve nossa equipe enviará sua chave Pix.');">
+            <input type="text" placeholder="Seu nome completo" required>
+            <input type="email" placeholder="Seu melhor e-mail" required>
+            <input type="tel" placeholder="Seu número de WhatsApp" required>
+            <input type="submit" value="Reservar agora">
+        </form>
+
+        <div class="footer">
+            © 2025 Extrapowercaps. Todos os direitos reservados.
+        </div>
+    </div>
+
+    <script>
+        // Timer de 10 minutos regressivo
+        let timeLeft = 10 * 60; // 10 minutos em segundos
+        const countdownEl = document.getElementById('countdown');
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            countdownEl.textContent = `Oferta expira em: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                countdownEl.textContent = "Oferta expirada!";
+            }
+        }
+
+        updateTimer();
+    </script>
+</body>
+</html>
