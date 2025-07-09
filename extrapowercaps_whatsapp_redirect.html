@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Extrapowercaps - Reserva com Atendimento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 40px;
+      color: #333;
+    }
+    .container {
+      background-color: #fff;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #d62828;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    input[type="submit"] {
+      padding: 14px;
+      background-color: #25D366;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 Garanta sua reserva com atendimento individual!</h1>
+    <p>Preencha os dados e fale direto com nossa equipe via WhatsApp.</p>
+
+    <form onsubmit="enviarWhatsApp(); return false;">
+      <input id="nome" type="text" placeholder="Seu nome completo" required>
+      <input id="email" type="email" placeholder="Seu melhor e-mail" required>
+      <input id="tel" type="tel" placeholder="Seu número de WhatsApp" required>
+      <input type="submit" value="Falar com Atendimento">
+    </form>
+
+    <div class="footer">
+      © 2025 Extrapowercaps. Todos os direitos reservados.
+    </div>
+  </div>
+
+  <script>
+    function enviarWhatsApp() {
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const tel = document.getElementById("tel").value;
+
+      const mensagem = `Nome: ${nome}%0AEmail: ${email}%0AWhatsApp: ${tel}%0AQuero garantir meu tratamento.`;
+      const numero = "5511998427691";
+
+      window.location.href = `https://wa.me/${numero}?text=${mensagem}`;
+    }
+  </script>
+</body>
+</html>
